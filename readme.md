@@ -19,5 +19,5 @@ Options
 
 
 Examples
-	$ code-push-promote -k 12hM3840Fes18273c407zz612Su87U36498my -a MyAppName -d Production
+	$ code-push-promote -v1.0.0 -k 12hM3840Fes18273c407zz612Su87U36498my -a MyAppName -d Production
 ```
