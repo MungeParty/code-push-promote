@@ -10,7 +10,8 @@
 		"node": ">=8"
 	},
 	"files": [
-		"cli.js"
+		"cli.js",
+		"src/*"
 	],
 	"dependencies": {
 		"adm-zip": "^0.4.13",
