@@ -1,12 +1,9 @@
 ## Install
-
 ```
 $ npm install --global
 ```
 
-
 ## Usage
-
 ```
 Usage
 	$ code-push-promote -v [version] -k [key] -a [app] -d [deployment]
@@ -16,7 +13,6 @@ Options
 	-k    Source deployment key.
 	-a    Destination app.
 	-d    Destination deployment name.
-
 
 Examples
 	$ code-push-promote -v1.0.0 -k 12hM3840Fes18273c407zz612Su87U36498my -a MyAppName -d Production
