@@ -1,27 +1,53 @@
-#!/usr/bin/env node
-'use strict';
-const meow = require('meow');
-const unicornFun = require('unicorn-fun');
+#!/usr/bin/env node --harmony
+"use strict";
+const meow = require("meow");
+const promote = require("./src/promote");
 
-const cli = meow(`
-	Usage
-	  $ unicorn-fun [input]
+const usage = `
+Usage
+	$ code-push-promote -k [key] -a [app] -d [deployment]
 
-	Options
-	  --postfix  Lorem ipsum  [Default: rainbows]
+Options
+	-v    App target version.
+	-k    Source deployment key.
+	-a    Destination app.
+	-d    Destination deployment name.
 
-	Examples
-	  $ cli-name
-	  unicorns & rainbows
-	  $ cli-name ponies
-	  ponies & rainbows
-`, {
-	flags: {
-		postfix: {
-			type: 'string',
-			default: 'rainbows'
-		}
+
+Examples
+	$ code-push-promote -k 12hM3840Fes18273c407zz612Su87U36498my -a MyAppName -d Production
+`;
+
+const flags = {
+	k: {
+		type: "string",
+		alias: "k",
+		default: "key"
+	},
+	v: {
+		type: "string",
+		alias: "v",
+		default: "version"
+	},
+	a: {
+		type: "string",
+		alias: "a",
+		default: "app"
+	},
+	d: {
+		type: "string",
+		alias: "d",
+		default: "deployment"
 	}
-});
+};
 
-console.log(moduleName(cli.input[0] || 'unicorns', cli.flags));
+const cli = meow(usage, flags);
+
+const { v, k, a, d } = cli.flags;
+const badInput = !v || !k || !a || !d;
+if (badInput) {
+	console.log(usage);
+	return;
+}
+
+promote(v, k, a, d);

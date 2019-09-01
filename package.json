@@ -1,39 +1,21 @@
 {
-	"name": "unicorn-fun-cli",
-	"version": "0.0.0",
-	"description": "My awesome command-line tool",
+	"name": "code-push-promote-cli",
+	"version": "1.0.0",
 	"license": "MIT",
-	"repository": "YOUR-GITHUB-USERNAME/unicorn-fun-cli",
-	"author": {
-		"name": "YOUR NAME",
-		"email": "YOUR EMAIL",
-		"url": "YOUR WEBSITE"
-	},
+	"description": "Command line tool to promote codepush bundles from one app to another.",
 	"bin": {
-		"unicorn-fun": "cli.js"
+		"code-push-promote": "cli.js"
 	},
 	"engines": {
 		"node": ">=8"
 	},
-	"scripts": {
-		"test": "xo && ava"
-	},
 	"files": [
 		"cli.js"
 	],
-	"keywords": [
-		"cli",
-		"cli-app",
-		"unicorn",
-		"fun"
-	],
 	"dependencies": {
+		"adm-zip": "^0.4.13",
+		"isomorphic-fetch": "^2.2.1",
 		"meow": "^5.0.0",
-		"unicorn-fun": "^0.0.0"
-	},
-	"devDependencies": {
-		"ava": "^2.1.0",
-		"execa": "^2.0.0",
-		"xo": "^0.24.0"
+		"rimraf": "^3.0.0"
 	}
 }
