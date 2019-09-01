@@ -9,10 +9,10 @@ $ npm install --global
 
 ```
 Usage
-	$ code-push-promote -k [key] -a [app] -d [deployment]
+	$ code-push-promote -v [version] -k [key] -a [app] -d [deployment]
 
 Options
-	-v    App target version.
+	-v    App version used in the update check.
 	-k    Source deployment key.
 	-a    Destination app.
 	-d    Destination deployment name.
