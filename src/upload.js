@@ -4,14 +4,14 @@ const admzip = require('adm-zip');
 const rimraf = require('rimraf');
 const { exec } = require('child_process');
 
-const { EXPORT_PATH } = require("./constants");
+const { EXPORT_PATH, DOWNLOAD_PATH } = require("./constants");
 
 const _unpackBundle = async filename => {
 	rimraf.sync(EXPORT_PATH);
 	console.log(`\nUnpacking bundle to: \n${path.resolve(EXPORT_PATH)}`);
 	const zip = new admzip(filename);
 	zip.extractAllTo(EXPORT_PATH, true);
-	fs.unlink(filename, () => null);
+	rimraf.sync(DOWNLOAD_PATH)
 	console.log(`Bundle unpacked.`);
 };
 
